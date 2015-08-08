@@ -1,8 +1,8 @@
 module <%- appName %> {
-  'use strict';
+    'use strict';
 
-  /** @ngInject */
-  export function runBlock($log: ng.ILogService) {
-    $log.debug('runBlock end');
-  }
+    /** @ngInject */
+    export function runBlock($log: ng.ILogService) {
+        $log.debug('runBlock end');
+    }
 }

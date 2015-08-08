@@ -16,20 +16,20 @@ declare var toastr: Toastr;
 declare var moment: moment.MomentStatic;
 
 module <%- appName %> {
-  'use strict';
+    'use strict';
 
-  angular.module('<%- appName %>', [<%- modulesDependencies %>])
-    .constant('malarkey', malarkey)
-    .constant('toastr', toastr)
-    .constant('moment', moment)
-    .config(config)
+    angular.module('<%- appName %>', [<%- modulesDependencies %>])
+        .constant('malarkey', malarkey)
+        .constant('toastr', toastr)
+        .constant('moment', moment)
+        .config(config)
 <% if (props.router.key !== 'none') { %>
-    .config(routerConfig)
+        .config(routerConfig)
 <% } %>
-    .run(runBlock)
-    .service('githubContributor', GithubContributor)
-    .service('webDevTec', WebDevTecService)
-    .controller('MainController', MainController)
-    .directive('acmeNavbar', acmeNavbar)
-    .directive('acmeMalarkey', acmeMalarkey);
+        .run(runBlock)
+        .service('githubContributor', GithubContributor)
+        .service('webDevTec', WebDevTecService)
+        .controller('MainController', MainController)
+        .directive('acmeNavbar', acmeNavbar)
+        .directive('acmeMalarkey', acmeMalarkey);
 }

@@ -11,16 +11,16 @@ import NavbarDirective from '../app/components/navbar/navbar.directive';
 import MalarkeyDirective from '../app/components/malarkey/malarkey.directive';
 
 angular.module('<%- appName %>', [<%- modulesDependencies %>])
-  .constant('malarkey', malarkey)
-  .constant('toastr', toastr)
-  .constant('moment', moment)
-  .config(config)
+    .constant('malarkey', malarkey)
+    .constant('toastr', toastr)
+    .constant('moment', moment)
+    .config(config)
 <% if (props.router.key !== 'none') { %>
-  .config(routerConfig)
+    .config(routerConfig)
 <% } %>
-  .run(runBlock)
-  .service('githubContributor', GithubContributorService)
-  .service('webDevTec', WebDevTecService)
-  .controller('MainController', MainController)
-  .directive('acmeNavbar', () => new NavbarDirective())
-  .directive('acmeMalarkey', () => new MalarkeyDirective(malarkey));
+    .run(runBlock)
+    .service('githubContributor', GithubContributorService)
+    .service('webDevTec', WebDevTecService)
+    .controller('MainController', MainController)
+    .directive('acmeNavbar', () => new NavbarDirective())
+    .directive('acmeMalarkey', () => new MalarkeyDirective(malarkey));
