@@ -29,8 +29,7 @@ describe('gulp-angular generator modules script', function () {
       resource: { module: null },
       router: { module: 'testModule1' },
       ui: { module: 'testModule2' },
-      bootstrapComponents: { module: 'testModule3' },
-      foundationComponents: { module: 'testModule4' }
+      bootstrapComponents: { module: 'testModule3' }
     };
     generator.computeModules();
     generator.modulesDependencies.should.match(/\', \'/);

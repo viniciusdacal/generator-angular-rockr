@@ -120,18 +120,15 @@ describe('gulp-angular bower template', function () {
   it('should add the right ui lib', function() {
     model.props.ui.key = 'none';
     model.props.bootstrapComponents.key = 'none';
-    model.props.foundationComponents.key = 'none';
     model.props.cssPreprocessor.extension = 'scss';
     var result = bower(model);
     result.should.not.match(/bootstrap/);
-    result.should.not.match(/foundation/);
     result.should.not.match(/material/);
 
     model.props.ui.key = 'angular-material';
     result = bower(model);
     result.should.match(/material/);
     result.should.not.match(/boostrap/);
-    result.should.not.match(/foundation/);
 
     model.props.ui.key = 'bootstrap';
     model.props.bootstrapComponents.key = 'ui-bootstrap';
@@ -139,7 +136,6 @@ describe('gulp-angular bower template', function () {
     result.should.match(/bootstrap-sass-official/);
     result.should.match(/angular-bootstrap/);
     result.should.not.match(/"bootstrap"/);
-    result.should.not.match(/foundation/);
     result.should.not.match(/material/);
 
     model.props.bootstrapComponents.key = 'angular-strap';
@@ -147,22 +143,12 @@ describe('gulp-angular bower template', function () {
     result = bower(model);
     result.should.match(/"bootstrap"/);
     result.should.match(/angular-strap/);
-    result.should.not.match(/foundation/);
     result.should.not.match(/material/);
 
     model.props.bootstrapComponents.key = 'none';
     model.props.cssPreprocessor.extension = 'styl';
     result = bower(model);
     result.should.match(/bootstrap-stylus/);
-    result.should.not.match(/foundation/);
-    result.should.not.match(/material/);
-
-    model.props.ui.key = 'foundation';
-    model.props.foundationComponents.key = 'angular-foundation';
-    result = bower(model);
-    result.should.match(/"foundation"/);
-    result.should.match(/angular-foundation/);
-    result.should.not.match(/bootstrap/);
     result.should.not.match(/material/);
   });
 

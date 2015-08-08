@@ -74,19 +74,12 @@ describe('gulp-angular generator prompts script', function () {
       generator.askQuestions();
       generator.prompt.should.have.been.called;
       generator.props.bootstrapComponents.should.be.an('object');
-      generator.props.foundationComponents.should.be.an('object');
     });
 
     it('should not override bootstrapComponents if bootstrap', function() {
       sinon.stub(generator, 'prompt').callsArgWith(1, { ui: { key: 'bootstrap' } });
       generator.askQuestions();
       chai.expect(generator.props.bootstrapComponents).to.be.undefined;
-    });
-
-    it('should not override foundationComponents if foundation', function() {
-      sinon.stub(generator, 'prompt').callsArgWith(1, { ui: { key: 'foundation' } });
-      generator.askQuestions();
-      chai.expect(generator.props.foundationComponents).to.be.undefined;
     });
 
     it('should skip all if skipConfig', function() {
@@ -99,10 +92,8 @@ describe('gulp-angular generator prompts script', function () {
     it('should set when functions which check for ui choice', function() {
       generator.askQuestions();
       var whenBootstrap = _.findWhere(promptsJson, {name: 'bootstrapComponents'}).when;
-      var whenFoundation = _.findWhere(promptsJson, {name: 'foundationComponents'}).when;
       whenBootstrap({ ui: { key: 'bootstrap' } }).should.be.true;
       whenBootstrap({ ui: { key: 'anythingElse' } }).should.be.false;
-      whenFoundation({ ui: { key: 'foundation' } }).should.be.true;
       whenFoundation({ ui: { key: 'anythingElse' } }).should.be.false;
     });
   });

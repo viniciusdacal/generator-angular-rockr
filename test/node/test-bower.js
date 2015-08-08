@@ -110,29 +110,6 @@ describe('gulp-angular generator bower script', function () {
       generator.wiredepExclusions[1].should.be.equal('/bootstrap\\.css/');
     });
 
-    it('should exclude foundation if foundation and sass', function() {
-      generator.props = {
-        jQuery: { key: 'jquery1' },
-        ui: { key: 'foundation' },
-        foundationComponents: { key: 'angular-foundation' },
-        cssPreprocessor: { extension: 'scss' }
-      };
-      generator.computeWiredepExclusions();
-      generator.wiredepExclusions[0].should.be.equal('/foundation\\.js/');
-      generator.wiredepExclusions[1].should.be.equal('/foundation\\.css/');
-    });
-
-    it('should exclude foundation if foundation and not sass', function() {
-      generator.props = {
-        jQuery: { key: 'jquery1' },
-        ui: { key: 'foundation' },
-        foundationComponents: { key: 'angular-foundation' },
-        cssPreprocessor: { extension: 'notscss' }
-      };
-      generator.computeWiredepExclusions();
-      generator.wiredepExclusions[0].should.be.equal('/foundation\\.js/');
-    });
-
     it('should exclude nothing if no ui', function() {
       generator.props = {
         jQuery: { key: 'jquery1' },
@@ -153,22 +130,9 @@ describe('gulp-angular generator bower script', function () {
       generator.wiredepExclusions.length.should.be.equal(0);
     });
 
-    it('should exclude nothing if foundation but nothing else', function() {
-      generator.props = {
-        jQuery: { key: 'jquery1' },
-        ui: { key: 'foundation' },
-        foundationComponents: { key: 'official' },
-        cssPreprocessor: { key: 'none' }
-      };
-      generator.computeWiredepExclusions();
-      generator.wiredepExclusions.length.should.be.equal(0);
-    });
-
     it('should exclude jQuery if select "None"', function() {
       generator.props = {
         jQuery: { key: 'none' },
-        ui: { key: 'foundation' },
-        foundationComponents: { key: 'official' },
         cssPreprocessor: { key: 'none' }
       };
       generator.computeWiredepExclusions();
@@ -178,8 +142,6 @@ describe('gulp-angular generator bower script', function () {
     it('should exclude jQuery with Zepto', function() {
       generator.props = {
         jQuery: { key: 'zepto' },
-        ui: { key: 'foundation' },
-        foundationComponents: { key: 'official' },
         cssPreprocessor: { key: 'none' }
       };
       generator.computeWiredepExclusions();
