@@ -9,28 +9,28 @@ var templateTools = require('../template-tools');
 var mockModel = require('./mock-model');
 
 describe('gulp-angular server template', function () {
-  var server, model;
+    var server, model;
 
-  before(function() {
-    return templateTools.load('gulp/_server.js')
-      .then(function(templateModule) {
-        server = templateModule;
-      });
-  });
+    before(function() {
+        return templateTools.load('gulp/_server.js')
+            .then(function(templateModule) {
+                server = templateModule;
+            });
+    });
 
-  beforeEach(function() {
-    model = mockModel();
-  });
+    beforeEach(function() {
+        model = mockModel();
+    });
 
-  it('should use qrCode module if selected', function() {
-    model.qrCode = false;
-    var result = server(model);
-    result.should.not.match(/qrcode/);
+    it('should use qrCode module if selected', function() {
+        model.qrCode = false;
+        var result = server(model);
+        result.should.not.match(/qrcode/);
 
-    model.qrCode = true;
-    result = server(model);
-    result.should.match(/require\('qrcode-terminal'\)/);
-    result.should.match(/qrcode\.generate/);
-  });
+        model.qrCode = true;
+        result = server(model);
+        result.should.match(/require\('qrcode-terminal'\)/);
+        result.should.match(/qrcode\.generate/);
+    });
 
 });

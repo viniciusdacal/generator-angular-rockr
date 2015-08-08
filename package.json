@@ -1,5 +1,5 @@
 {
-  "name": "generator-gulp-angular",
+  "name": "generator-angular-rockr",
   "version": "0.13.0-dev",
   "preferGlobal": true,
   "description": "Yeoman generator for AngularJS with Gulp",

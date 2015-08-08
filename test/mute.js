@@ -17,7 +17,7 @@
 var Fixture = require('fixture-stdout');
 var fixtureOut = new Fixture();
 var fixtureErr = new Fixture({
-  stream: process.stderr
+    stream: process.stderr
 });
 
 var writesOut = [];
@@ -25,36 +25,36 @@ var writesErr = [];
 
 // Mute
 module.exports.mute = function () {
-  fixtureOut.capture(function onWrite(string) {
-    writesOut.push({
-      string: string
+    fixtureOut.capture(function onWrite(string) {
+        writesOut.push({
+            string: string
+        });
+
+        // Prevent original write
+        return false;
     });
 
-    // Prevent original write
-    return false;
-  });
 
+    fixtureErr.capture(function onWrite(string) {
+        writesErr.push({
+            string: string
+        });
 
-  fixtureErr.capture(function onWrite(string) {
-    writesErr.push({
-      string: string
+        // Prevent original write
+        return false;
     });
-
-    // Prevent original write
-    return false;
-  });
 };
 
 // Unmute
 module.exports.unmute = function () {
-  fixtureOut.release();
-  fixtureErr.release();
+    fixtureOut.release();
+    fixtureErr.release();
 };
 
 // Return the output that was captured
 module.exports.getMutedWrites = function () {
-  return {
-    out: writesOut,
-    err: writesErr
-  };
+    return {
+        out: writesOut,
+        err: writesErr
+    };
 };

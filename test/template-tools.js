@@ -21,34 +21,34 @@ var sourceFooter = '\n};';
  * for getting the compiled JS code for the template
  */
 function compileEjs(content) {
-  var savedConsoleLog = console.log;
-  var source;
+    var savedConsoleLog = console.log;
+    var source;
 
-  console.log = function(src) {
-    source = src;
-  };
+    console.log = function(src) {
+        source = src;
+    };
 
-  ejs.compile(content, { debug: true, compileDebug: false });
+    ejs.compile(content, { debug: true, compileDebug: false });
 
-  console.log = savedConsoleLog;
+    console.log = savedConsoleLog;
 
-  return source;
+    return source;
 }
 
 function compile(fileName) {
-  var sourceFilePath = templatesDir + fileName;
-  var destinationFilePath = compiledTemplatesDir + fileName + compiledTemplatesSuffix;
-  var destinationDir = path.dirname(destinationFilePath);
+    var sourceFilePath = templatesDir + fileName;
+    var destinationFilePath = compiledTemplatesDir + fileName + compiledTemplatesSuffix;
+    var destinationDir = path.dirname(destinationFilePath);
 
-  return Promise.all([
-    mkdirp(destinationDir),
-    fs.readFile(sourceFilePath)
-  ]).then(function(results) {
-    var content = results[1].toString();
-    var sourceContent = sourceHeader + beautify(compileEjs(content), { 'indent_size': 2 }) + sourceFooter;
-    sourceContent = sourceContent.replace('with(locals || {})', 'with(locals)');
-    return fs.writeFile(destinationFilePath, sourceContent);
-  });
+    return Promise.all([
+        mkdirp(destinationDir),
+        fs.readFile(sourceFilePath)
+    ]).then(function(results) {
+        var content = results[1].toString();
+        var sourceContent = sourceHeader + beautify(compileEjs(content), { 'indent_size': 2 }) + sourceFooter;
+        sourceContent = sourceContent.replace('with(locals || {})', 'with(locals)');
+        return fs.writeFile(destinationFilePath, sourceContent);
+    });
 }
 
 /**
@@ -56,73 +56,73 @@ function compile(fileName) {
  * If the file didn't exists before, no coverage will happening
  */
 function load(fileName) {
-  var destinationFilePath = path.join(compiledTemplatesDir, fileName + compiledTemplatesSuffix);
+    var destinationFilePath = path.join(compiledTemplatesDir, fileName + compiledTemplatesSuffix);
 
-  return compile(fileName)
-    .then(function() {
-      return require(destinationFilePath);
-    });
+    return compile(fileName)
+        .then(function() {
+            return require(destinationFilePath);
+        });
 }
 
 function prepare() {
-  return readdir(templatesDir)
-    .then(function(files) {
-      return Promise.all(files.filter(function(file) {
-        var basename = path.basename(file);
-        return /^_[^_]/.test(basename);
-      }).map(function(file) {
-        return path.relative(templatesDir, file);
-      }).map(function(file) {
-        return compile(file);
-      }));
-    })
-    .catch(function(error) {
-      console.log('Prepare failed', error);
-    });
+    return readdir(templatesDir)
+        .then(function(files) {
+            return Promise.all(files.filter(function(file) {
+                var basename = path.basename(file);
+                return /^_[^_]/.test(basename);
+            }).map(function(file) {
+                return path.relative(templatesDir, file);
+            }).map(function(file) {
+                return compile(file);
+            }));
+        })
+        .catch(function(error) {
+            console.log('Prepare failed', error);
+        });
 }
 
 function deps() {
-  var prompts = require('../app/src/mock-prompts');
-  var angularVersion = prompts.defaults.angularVersion;
-  var packageFileName = 'package.json';
-  var packagePath = templatesDir + '_' + packageFileName;
-  var packageDestinationPath = depsDir + packageFileName;
-  var bowerFileName = 'bower.json';
-  var bowerPath = templatesDir + '_' + bowerFileName;
-  var bowerDestinationPath = depsDir + bowerFileName;
+    var prompts = require('../app/src/mock-prompts');
+    var angularVersion = prompts.defaults.angularVersion;
+    var packageFileName = 'package.json';
+    var packagePath = templatesDir + '_' + packageFileName;
+    var packageDestinationPath = depsDir + packageFileName;
+    var bowerFileName = 'bower.json';
+    var bowerPath = templatesDir + '_' + bowerFileName;
+    var bowerDestinationPath = depsDir + bowerFileName;
 
-  function processTemplate(buffer) {
-    var data = {
-      appName: 'appName',
-      props: { angularVersion: angularVersion },
-      bowerOverrides: '{}'
-    };
+    function processTemplate(buffer) {
+        var data = {
+            appName: 'appName',
+            props: { angularVersion: angularVersion },
+            bowerOverrides: '{}'
+        };
 
-    var string = buffer.toString().replace(/<%[^-].*?%>/g, '');
-    string = string.replace(/"gulp-imagemin".*/, '');
-    return ejs.render(string, data);
-  }
+        var string = buffer.toString().replace(/<%[^-].*?%>/g, '');
+        string = string.replace(/"gulp-imagemin".*/, '');
+        return ejs.render(string, data);
+    }
 
-  return Promise.all([
-    mkdirp(depsDir),
-    fs.readFile(packagePath),
-    fs.readFile(bowerPath)
-  ]).then(function(results) {
-    var packageFileContent = processTemplate(results[1]);
-    var bowerFileContent = processTemplate(results[2]);
     return Promise.all([
-      fs.writeFile(packageDestinationPath, packageFileContent),
-      fs.writeFile(bowerDestinationPath, bowerFileContent)
-    ]);
-  })
-  .catch(function(error) {
-    console.log('Deps failed', error);
-  });
+        mkdirp(depsDir),
+        fs.readFile(packagePath),
+        fs.readFile(bowerPath)
+    ]).then(function(results) {
+        var packageFileContent = processTemplate(results[1]);
+        var bowerFileContent = processTemplate(results[2]);
+        return Promise.all([
+            fs.writeFile(packageDestinationPath, packageFileContent),
+            fs.writeFile(bowerDestinationPath, bowerFileContent)
+        ]);
+    })
+    .catch(function(error) {
+        console.log('Deps failed', error);
+    });
 }
 
 module.exports = {
-  compile: compile,
-  load: load,
-  prepare: prepare,
-  deps: deps
+    compile: compile,
+    load: load,
+    prepare: prepare,
+    deps: deps
 };
