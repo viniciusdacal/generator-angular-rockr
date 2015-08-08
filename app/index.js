@@ -6,31 +6,31 @@ var chalk = require('chalk');
 
 var GulpAngularGenerator = yeoman.generators.Base.extend({
 
-  constructor: function () {
-    yeoman.generators.Base.apply(this, arguments);
+    constructor: function () {
+        yeoman.generators.Base.apply(this, arguments);
 
-    // Define arguments
-    this.argument('appName', {
-      type: String,
-      required: false
-    });
+        // Define arguments
+        this.argument('appName', {
+            type: String,
+            required: false
+        });
 
-    this.version = require('../package.json').version;
+        this.version = require('../package.json').version;
 
-    this.props = {};
-  },
+        this.props = {};
+    },
 
-  /**
-   * Shows yeoman says his greatings unless the skip option is set
-   */
-  info: function () {
-    if (!this.options['skip-welcome-message']) {
-      this.log(yosay(
-        chalk.red('Welcome!') + '\n' +
-        chalk.yellow('You\'re using the fantastic generator for scaffolding an application with Angular and Gulp!')
-      ));
+    /**
+     * Shows yeoman says his greatings unless the skip option is set
+     */
+    info: function () {
+        if (!this.options['skip-welcome-message']) {
+            this.log(yosay(
+                chalk.red('Welcome!') + '\n' +
+                chalk.yellow('You\'re using the fantastic generator for scaffolding an application with Angular and Gulp!')
+            ));
+        }
     }
-  }
 
 });
 
