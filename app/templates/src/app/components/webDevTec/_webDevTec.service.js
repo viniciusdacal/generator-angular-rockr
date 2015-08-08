@@ -1,19 +1,19 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-      .module('<%- appName %>')
-      .service('webDevTec', webDevTec);
+    angular
+            .module('<%- appName %>')
+            .service('webDevTec', webDevTec);
 
-  /** @ngInject */
-  function webDevTec() {
-    var data = <%- technologies %>;
+    /** @ngInject */
+    function webDevTec() {
+        var data = <%- technologies %>;
 
-    this.getTec = getTec;
+        this.getTec = getTec;
 
-    function getTec() {
-      return data;
+        function getTec() {
+            return data;
+        }
     }
-  }
 
 })();

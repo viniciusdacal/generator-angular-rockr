@@ -1,30 +1,30 @@
 module <%- appName %> {
-  'use strict';
+    'use strict';
 
-  export interface ITecThing {
-    rank: number;
-    title: string;
-    url: string;
-    description: string;
-    logo: string;
-  }
-
-  export class WebDevTecService {
-    public data: ITecThing[];
-
-    public get tec(): ITecThing[] {
-      return this.data;
+    export interface ITecThing {
+        rank: number;
+        title: string;
+        url: string;
+        description: string;
+        logo: string;
     }
 
-    /** @ngInject */
-    constructor () {
-      var rawData = <%- technologies %>;
+    export class WebDevTecService {
+        public data: ITecThing[];
 
-      this.data = rawData.map((awesomeThing: ITecThing) => {
-        awesomeThing.rank = Math.random();
-        return awesomeThing;
-      });
+        public get tec(): ITecThing[] {
+            return this.data;
+        }
+
+        /** @ngInject */
+        constructor () {
+            var rawData = <%- technologies %>;
+
+            this.data = rawData.map((awesomeThing: ITecThing) => {
+                awesomeThing.rank = Math.random();
+                return awesomeThing;
+            });
+        }
     }
-  }
 
 }
