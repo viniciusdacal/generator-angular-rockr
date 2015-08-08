@@ -34,16 +34,12 @@
 <%   } else { -%>
     "bootstrap": "~3.3.4",
 <%   } -%>
-<% } if(props.ui.key === 'foundation') { -%>
-    "foundation": "~5.5.2",
 <% } if(props.ui.key === 'angular-material') { -%>
     "angular-material": "~0.9.7",
 <% } if(props.bootstrapComponents.key === 'ui-bootstrap') { -%>
     "angular-bootstrap": "~0.13.0",
 <% } if(props.bootstrapComponents.key === 'angular-strap') { -%>
     "angular-strap": "~2.2.4",
-<% } if(props.foundationComponents.key === 'angular-foundation') { -%>
-    "angular-foundation": "~0.6.0",
 <% } if(props.jsPreprocessor.key === 'traceur') { -%>
     "traceur-runtime": "~0.0.90",
 <% } -%>
