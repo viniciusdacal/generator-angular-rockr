@@ -16,8 +16,7 @@ module.exports = function(GulpAngularGenerator) {
       this.props.resource.module,
       this.props.router.module,
       this.props.ui.module,
-      this.props.bootstrapComponents.module,
-      this.props.foundationComponents.module
+      this.props.bootstrapComponents.module
     ]);
 
     this.modulesDependencies = ngModules

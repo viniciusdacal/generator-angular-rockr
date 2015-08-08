@@ -21,7 +21,6 @@ var questions = [
   'router',
   'ui',
   'bootstrapComponents',
-  'foundationComponents',
   'cssPreprocessor',
   'jsPreprocessor',
   'htmlPreprocessor'
@@ -70,10 +69,6 @@ model.bootstrapComponents.choices.forEach(function(choice) {
   model.bootstrapComponents.values[choice.value.key] = choice.value;
 });
 
-model.foundationComponents.choices.forEach(function(choice) {
-  model.foundationComponents.values[choice.value.key] = choice.value;
-});
-
 model.cssPreprocessor.choices.forEach(function(choice) {
   model.cssPreprocessor.values[choice.value.key] = choice.value;
 });
@@ -96,7 +91,6 @@ module.exports = {
     router: model.router.values['ui-router'],
     ui: model.ui.values.bootstrap,
     bootstrapComponents: model.bootstrapComponents.values['ui-bootstrap'],
-    foundationComponents: model.foundationComponents.values.none,
     cssPreprocessor: model.cssPreprocessor.values['node-sass'],
     jsPreprocessor: model.jsPreprocessor.values.none,
     htmlPreprocessor: model.htmlPreprocessor.values.none
