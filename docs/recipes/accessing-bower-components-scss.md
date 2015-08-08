@@ -8,18 +8,3 @@ var sassOptions = {
   style: 'expanded'
 };
 ```
-
-For those who use Foundation 5:
-
-```javascript
-var sassOptions = {
-  loadPath: [options.src + '/../bower_components/foundation/scss'],
-  style: 'expanded'
-};
-```
-
-And then you can write this in the index.scss
-
-```javascript
-@import 'foundation';
-```

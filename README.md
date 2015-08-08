@@ -60,7 +60,6 @@ yo gulp-angular
 ![Logo](docs/assets/angular.png)
 ![Logo](docs/assets/bootstrap.png)
 ![Logo](docs/assets/materialdesign.png)
-![Logo](docs/assets/foundation.png)
 ![Logo](docs/assets/bower.png)
 ![Logo](docs/assets/webpack.png)
 ![Logo](docs/assets/karma.png)
