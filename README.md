@@ -1,19 +1,10 @@
-# generator-gulp-angular ![Logo](app/templates/src/assets/images/generator-gulp-angular-logo.png)
-
-[![Build Status](https://img.shields.io/travis/Swiip/generator-gulp-angular/master.svg?style=flat)](http://travis-ci.org/Swiip/generator-gulp-angular)
-[![Coverage Status](http://img.shields.io/coveralls/Swiip/generator-gulp-angular.svg?style=flat)](https://coveralls.io/r/Swiip/generator-gulp-angular?branch=master)
-[![Dependencies](http://img.shields.io/david/Swiip/generator-gulp-angular.svg?style=flat)](https://david-dm.org/eleven-labs/generator-gulp-angular)
-[![NPM Version](http://img.shields.io/npm/v/generator-gulp-angular.svg?style=flat)](https://www.npmjs.org/package/generator-gulp-angular)
-[![Download Month](http://img.shields.io/npm/dm/generator-gulp-angular.svg?style=flat)](https://www.npmjs.org/package/generator-gulp-angular)
-
-[![Gitter](http://img.shields.io/badge/Gitter-room-brightgreen.svg?style=flat)](https://gitter.im/Swiip/generator-gulp-angular)
+# generator-angular-rockr
 
 > Yeoman generator for AngularJS + Gulp.
 
 > Lets you quickly set up a project with:
 > * your favorite technologies
 > * web best pratices.
-> * guidelines powered by Google.
 
 > Gulp provide fast workspace with quick feedback.
 
@@ -69,7 +60,6 @@ yo gulp-angular
 ![Logo](docs/assets/protractor.png)
 
 ![Logo](docs/assets/babel.png)
-![Logo](docs/assets/coffeescript.png)
 ![Logo](docs/assets/typescript.png)
 ![Logo](docs/assets/traceur.png)
 ![Logo](docs/assets/sass.png)
@@ -80,21 +70,6 @@ yo gulp-angular
 ![Logo](docs/assets/handlebars.png)
 
 [List features included](docs/usage.md#features-included-in-the-gulpfile)
-
-
-## Questions the generator will ask
-
-[Questions the generator will ask](docs/usage.md#questions-the-generator-will-ask)
-
-
-## Changelog
-
-[All changes listed in the GitHub releases](https://github.com/Swiip/generator-gulp-angular/releases)
-
-
-## Contributing
-
-[Guidelines](CONTRIBUTING.md)
 
 
 ## License
