@@ -1,5 +1,6 @@
 # generator-angular-rockr
 
+> this project is a fork from [gulp angular generator](https://github.com/Swiip/generator-gulp-angular)
 > Yeoman generator for AngularJS + Gulp.
 
 > Lets you quickly set up a project with:
@@ -7,7 +8,6 @@
 > * web best pratices.
 
 > Gulp provide fast workspace with quick feedback.
-
 
 ## Usage
 
