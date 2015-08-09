@@ -94,7 +94,6 @@ describe('gulp-angular generator prompts script', function () {
             var whenBootstrap = _.findWhere(promptsJson, {name: 'bootstrapComponents'}).when;
             whenBootstrap({ ui: { key: 'bootstrap' } }).should.be.true;
             whenBootstrap({ ui: { key: 'anythingElse' } }).should.be.false;
-            whenFoundation({ ui: { key: 'anythingElse' } }).should.be.false;
         });
     });
 

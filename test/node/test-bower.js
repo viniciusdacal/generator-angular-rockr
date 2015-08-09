@@ -133,6 +133,7 @@ describe('gulp-angular generator bower script', function () {
         it('should exclude jQuery if select "None"', function() {
             generator.props = {
                 jQuery: { key: 'none' },
+                ui: { key: 'none' },
                 cssPreprocessor: { key: 'none' }
             };
             generator.computeWiredepExclusions();
@@ -142,6 +143,7 @@ describe('gulp-angular generator bower script', function () {
         it('should exclude jQuery with Zepto', function() {
             generator.props = {
                 jQuery: { key: 'zepto' },
+                ui: { key: 'none' },
                 cssPreprocessor: { key: 'none' }
             };
             generator.computeWiredepExclusions();
