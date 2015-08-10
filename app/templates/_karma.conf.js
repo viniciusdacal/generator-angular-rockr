@@ -44,7 +44,7 @@ module.exports = function(config) {
 
         logLevel: 'WARN',
 
-<% if (props.jsPreprocessor.key === 'none' || props.jsPreprocessor.key === 'coffee') { -%>
+<% if (props.jsPreprocessor.key === 'none') { -%>
         frameworks: ['jasmine', 'angular-filesort'],
 
         angularFilesort: {
@@ -87,7 +87,7 @@ module.exports = function(config) {
 
         plugins : [
             'karma-phantomjs-launcher',
-<% } if (props.jsPreprocessor.key === 'none' || props.jsPreprocessor.key === 'coffee') { -%>
+<% } if (props.jsPreprocessor.key === 'none') { -%>
             'karma-angular-filesort',
             'karma-coverage',
 <% } -%>
