@@ -1,6 +1,6 @@
 # generator-angular-rockr
 
-> this project is a fork from [gulp angular generator](https://github.com/Swiip/generator-gulp-angular)
+> this project is a fork from [gulp angular generator](https://github.com/Swiip/generator-angular-rockr)
 > Yeoman generator for AngularJS + Gulp.
 
 > Lets you quickly set up a project with:
@@ -20,11 +20,10 @@ More informations, options, parameters in the [usage documentation page](docs/us
 npm install -g yo gulp bower
 ```
 
-##### Install `generator-gulp-angular`:
+##### Install `generator-angular-rockr`:
 ```
-npm install -g generator-gulp-angular
+npm install -g generator-angular-rockr
 ```
-
 
 ### Run
 
