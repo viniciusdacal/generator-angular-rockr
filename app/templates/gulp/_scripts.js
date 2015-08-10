@@ -3,7 +3,7 @@
 var path = require('path'),
     gulp = require('gulp'),
     conf = require('./conf'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
 <% if (props.jsPreprocessor.srcExtension === 'es6') { -%>
     webpack = require('webpack-stream'),
 <% } -%>

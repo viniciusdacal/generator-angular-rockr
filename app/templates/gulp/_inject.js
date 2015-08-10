@@ -1,13 +1,11 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
-
-var $ = require('gulp-load-plugins')();
-
-var wiredep = require('wiredep').stream;
-var _ = require('lodash');
+var path = require('path'),
+    gulp = require('gulp'),
+    conf = require('./conf'),
+    $ = require('gulp-load-plugins')(),
+    wiredep = require('wiredep').stream,
+    _ = require('lodash');
 
 <% if (props.cssPreprocessor.key !== 'none') { -%>
 gulp.task('inject', ['scripts', 'styles'], function () {
