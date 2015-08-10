@@ -32,7 +32,7 @@ describe('gulp-angular index js template', function () {
     it('should name the module as the app name and add modules dependencies in the module declaration', function() {
         model.appName = 'testAppName';
         model.modulesDependencies = 'test value';
-        var testJs = /angular\n {4}\.module\('testAppName', \[test value\]\)/;
+        var testJs = /angular\n {8}\.module\('testAppName', \[test value\]\)/;
         var testEs6 = /angular\.module\('testAppName', \[test value\]\)/;
         var testTs = /angular\.module\('testAppName', \[test value\]\)/;
         var result = indexJs(model);
