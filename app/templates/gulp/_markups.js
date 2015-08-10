@@ -1,14 +1,12 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
+var path = require('path'),
+    gulp = require('gulp'),
+    conf = require('./conf'),
+    browserSync = require('browser-sync'),
+    $ = require('gulp-load-plugins')();
 
-var browserSync = require('browser-sync');
-
-var $ = require('gulp-load-plugins')();
-
-gulp.task('markups', function() {
+gulp.task('markups', function () {
     function renameToHtml(path) {
         path.extname = '.html';
     }

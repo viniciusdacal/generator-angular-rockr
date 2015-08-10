@@ -1,15 +1,12 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
-
-var browserSync = require('browser-sync');
-
-var $ = require('gulp-load-plugins')();
-
-var wiredep = require('wiredep').stream;
-var _ = require('lodash');
+var path = require('path'),
+    gulp = require('gulp'),
+    conf = require('./conf'),
+    browserSync = require('browser-sync'),
+    $ = require('gulp-load-plugins')(),
+    wiredep = require('wiredep').stream,
+    _ = require('lodash');
 
 gulp.task('styles', function () {
 <% if (props.cssPreprocessor.key === 'less') { -%>
@@ -31,7 +28,7 @@ gulp.task('styles', function () {
     ], { read: false });
 
     var injectOptions = {
-        transform: function(filePath) {
+        transform: function (filePath) {
             filePath = filePath.replace(conf.paths.src + '/app/', '');
             return '@import "' + filePath + '";';
         },

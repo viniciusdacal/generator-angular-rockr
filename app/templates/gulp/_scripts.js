@@ -1,15 +1,13 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
-
-var browserSync = require('browser-sync');
+var path = require('path'),
+    gulp = require('gulp'),
+    conf = require('./conf'),
+    browserSync = require('browser-sync');
 <% if (props.jsPreprocessor.srcExtension === 'es6') { -%>
-var webpack = require('webpack-stream');
+    webpack = require('webpack-stream'),
 <% } -%>
-
-var $ = require('gulp-load-plugins')();
+    $ = require('gulp-load-plugins')();
 
 <% if (props.jsPreprocessor.srcExtension !== 'es6') { -%>
 <%   if (props.jsPreprocessor.key === 'typescript') { -%>
@@ -59,7 +57,7 @@ function webpackWrapper(watch, callback) {
         webpackOptions.devtool = 'inline-source-map';
     }
 
-    var webpackChangeHandler = function(err, stats) {
+    var webpackChangeHandler = function (err, stats) {
         if(err) {
             conf.errorHandler('Webpack')(err);
         }

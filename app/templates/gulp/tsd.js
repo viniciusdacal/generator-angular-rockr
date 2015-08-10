@@ -1,29 +1,28 @@
 'use strict';
 
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-
-var path = require('path');
-var tsd = require('tsd');
-
-var tsdJson = 'tsd.json';
-var tsdApi = new tsd.getAPI(tsdJson);
+var gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    path = require('path'),
+    tsd = require('tsd'),
+    tsdJson = 'tsd.json',
+    tsdApi = new tsd.getAPI(tsdJson);
 
 gulp.task('tsd:install', function () {
-    var bower = require(path.join(process.cwd(), 'bower.json'));
+    var bower, dependencies, query, options;
+    bower = require(path.join(process.cwd(), 'bower.json'));
 
-    var dependencies = [].concat(
+    dependencies = [].concat(
         Object.keys(bower.dependencies),
         Object.keys(bower.devDependencies)
     );
 
-    var query = new tsd.Query();
+    query = new tsd.Query();
     dependencies.forEach(function (dependency) {
         query.addNamePattern(dependency);
     });
     query.addNamePattern('karma-jasmine');
 
-    var options = new tsd.Options();
+    options = new tsd.Options();
     options.resolveDependencies = true;
     options.overwriteFiles = true;
     options.saveBundle = true;
@@ -36,9 +35,9 @@ gulp.task('tsd:install', function () {
             return tsdApi.install(selection, options);
         })
         .then(function (installResult) {
-            var written = Object.keys(installResult.written.dict);
-            var removed = Object.keys(installResult.removed.dict);
-            var skipped = Object.keys(installResult.skipped.dict);
+            var written = Object.keys(installResult.written.dict),
+                removed = Object.keys(installResult.removed.dict),
+                skipped = Object.keys(installResult.skipped.dict);
 
             written.forEach(function (dts) {
                 gutil.log('Definition file written: ' + dts);

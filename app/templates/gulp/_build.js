@@ -1,12 +1,11 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
-
-var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
-});
+var path = require('path'),
+    gulp = require('gulp'),
+    conf = require('./conf'),
+    $ = require('gulp-load-plugins')({
+        pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
+    });
 
 <% if (props.htmlPreprocessor.key === 'none') { -%>
 gulp.task('partials', function () {
