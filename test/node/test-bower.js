@@ -134,6 +134,7 @@ describe('gulp-angular generator bower script', function () {
             generator.props = {
                 jQuery: { key: 'none' },
                 ui: { key: 'none' },
+                bootstrapComponents: { key: 'official' },
                 cssPreprocessor: { key: 'none' }
             };
             generator.computeWiredepExclusions();

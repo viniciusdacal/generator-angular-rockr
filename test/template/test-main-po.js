@@ -26,9 +26,6 @@ describe('gulp-angular gitignore template', function () {
         model.props.ui.key = 'bootstrap';
         var result = mainPo(model);
         result.should.match(/by\.css\('\.jumbotron'\)/);
-
-        result = mainPo(model);
-        result.should.match(/by\.css\('\.panel'\)/);
     });
 
 });

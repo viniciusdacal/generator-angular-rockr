@@ -39,7 +39,6 @@ describe('gulp-angular generator modules script', function () {
         generator.modulesDependencies.should.match(/testModule1/);
         generator.modulesDependencies.should.match(/testModule2/);
         generator.modulesDependencies.should.match(/testModule3/);
-        generator.modulesDependencies.should.match(/testModule4/);
     });
 
     it('should prepare an angular modules object', function() {
