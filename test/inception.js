@@ -33,7 +33,7 @@ function prepare(optionCase, promptCase) {
         ]);
     }).then(function() {
         var gulpAngular = helpers.createGenerator(
-            'gulp-angular:app',
+            'angular-rockr:app',
             ['../../../app'],
             false,
             options

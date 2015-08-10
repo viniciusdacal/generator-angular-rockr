@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-rockr",
-  "version": "0.13.0-dev",
+  "version": "0.1.0-dev",
   "preferGlobal": true,
   "description": "Yeoman generator for AngularJS with Gulp",
   "keywords": "yeoman-generator, angular, gulp, restangular, ui-router, bootstrap, angular-material, sass, less, es6, babel, traceur, typescript, jade, haml, webpack, jshint",
