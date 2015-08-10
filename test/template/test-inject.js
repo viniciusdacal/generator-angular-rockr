@@ -40,11 +40,6 @@ describe('gulp-angular inject template', function () {
         result.should.match(/injectScripts[\s\S]*conf\.paths\.src[\s\S]*var injectOptions/);
         result.should.not.match(/injectScripts[\s\S]*conf\.paths\.tmp[\s\S]*var injectOptions/);
 
-        model.props.jsPreprocessor.srcExtension = 'coffee';
-        result = inject(model);
-        result.should.match(/injectScripts[\s\S]*conf\.paths\.src[\s\S]*var injectOptions/);
-        result.should.match(/injectScripts[\s\S]*conf\.paths\.tmp[\s\S]*var injectOptions/);
-
         model.props.jsPreprocessor.srcExtension = 'es6';
         result = inject(model);
         result.should.not.match(/injectScripts[\s\S]*conf\.paths\.src[\s\S]*var injectOptions/);
@@ -57,12 +52,9 @@ describe('gulp-angular inject template', function () {
     });
 
     it('should choose the right way to sort inject files', function() {
-        model.props.jsPreprocessor.srcExtension = 'coffee';
-        var result = inject(model);
-        result.should.match(/\$\.angularFilesort\(\)/);
-
         model.props.jsPreprocessor.srcExtension = 'es6';
-        result = inject(model);
+        var result = inject(model);
+        console.log(result);
         result.should.not.match(/angularFilesort/);
     });
 

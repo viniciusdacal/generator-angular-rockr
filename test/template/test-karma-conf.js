@@ -28,11 +28,6 @@ describe('gulp-angular karma.conf template', function () {
         result.should.match(/conf\.paths\.src, '[^\s]*\.module\.js'/);
         result.should.match(/conf\.paths\.src, '[^\s]*\.js'/);
 
-        model.props.jsPreprocessor.key = 'coffee';
-        result = karmaConf(model);
-        result.should.match(/conf\.paths\.tmp, '\/serve[^\s]*\.module\.js'/);
-        result.should.match(/conf\.paths\.tmp, '\/serve[^\s]*\.js'/);
-
         model.props.jsPreprocessor.key = 'babel';
         result = karmaConf(model);
         result.should.match(/conf\.paths\.tmp, '\/serve\/app\/index\.module\.js/);
@@ -48,12 +43,6 @@ describe('gulp-angular karma.conf template', function () {
         result = karmaConf(model);
         result.should.match(/frameworks: \['jasmine', 'angular-filesort'\]/);
         result.should.match(/whitelist: \[[^\s]*conf\.paths\.src/);
-        result.should.match(/'karma-angular-filesort'/);
-
-        model.props.jsPreprocessor.key = 'coffee';
-        result = karmaConf(model);
-        result.should.match(/frameworks: \['jasmine', 'angular-filesort'\]/);
-        result.should.match(/whitelist: \[[^\s]*conf\.paths\.tmp/);
         result.should.match(/'karma-angular-filesort'/);
     });
 

@@ -39,17 +39,6 @@ describe('gulp-angular scripts template', function () {
         model.props.jsPreprocessor.key = 'none';
         var result = scripts(model);
         result.should.not.match(/babel/);
-        result.should.not.match(/coffee/);
-        result.should.not.match(/traceur/);
-        result.should.not.match(/typescript/);
-
-        model.props.jsPreprocessor.key = 'coffee';
-        model.props.jsPreprocessor.extension = 'coffee';
-        result = scripts(model);
-        result.should.match(/gulp\.src.*conf\.paths\.src, '.*\.coffee'/);
-        result.should.match(/\$\.coffee\(/);
-        result.should.match(/\$\.coffeelint\(/);
-        result.should.not.match(/babel/);
         result.should.not.match(/traceur/);
         result.should.not.match(/typescript/);
 
@@ -61,7 +50,6 @@ describe('gulp-angular scripts template', function () {
         result.should.match(/\$\.typescript\(/);
         result.should.not.match(/babel/);
         result.should.not.match(/traceur/);
-        result.should.not.match(/coffee/);
 
         model.props.jsPreprocessor.key = 'babel';
         model.props.jsPreprocessor.extension = 'js';
@@ -71,7 +59,6 @@ describe('gulp-angular scripts template', function () {
         result.should.match(/loaders:.*loader: 'babel-loader'/);
         result.should.match(/gulp\.task\('scripts:watch'/);
         result.should.not.match(/traceur/);
-        result.should.not.match(/coffee/);
         result.should.not.match(/typescript/);
 
         model.props.jsPreprocessor.key = 'traceur';
@@ -82,7 +69,6 @@ describe('gulp-angular scripts template', function () {
         result.should.match(/loaders:.*loader: 'traceur-loader'/);
         result.should.match(/gulp\.task\('scripts:watch'/);
         result.should.not.match(/babel/);
-        result.should.not.match(/coffee/);
         result.should.not.match(/typescript/);
     });
 

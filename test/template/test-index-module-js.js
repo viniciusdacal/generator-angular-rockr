@@ -17,13 +17,11 @@ describe('gulp-angular index js template', function () {
         return Promise.all([
             templateTools.load('src/app/_index.module.js'),
             templateTools.load('src/app/_index.module.es6'),
-            templateTools.load('src/app/_index.module.coffee'),
             templateTools.load('src/app/_index.module.ts')
         ]).then(function(modules) {
             indexJs = modules[0];
             indexEs6 = modules[1];
-            indexCoffee = modules[2];
-            indexTs = modules[3];
+            indexTs = modules[2];
         });
     });
 
@@ -37,13 +35,10 @@ describe('gulp-angular index js template', function () {
         var testJs = /angular\n {4}\.module\('testAppName', \[test value\]\)/;
         var testEs6 = /angular\.module\('testAppName', \[test value\]\)/;
         var testTs = /angular\.module\('testAppName', \[test value\]\)/;
-        var testCoffee = /angular\.module 'testAppName', \[test value\]/;
         var result = indexJs(model);
         result.should.match(testJs);
         result = indexEs6(model);
         result.should.match(testEs6);
-        result = indexCoffee(model);
-        result.should.match(testCoffee);
         result = indexTs(model);
         result.should.match(testTs);
     });

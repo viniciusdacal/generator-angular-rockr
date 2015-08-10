@@ -43,7 +43,6 @@ describe('gulp-angular generator inception tests', function () {
                 resource: prompts.resource.values.restangular,
                 router: prompts.router.values['ui-router'],
                 cssPreprocessor: prompts.cssPreprocessor.values.none,
-                jsPreprocessor: prompts.jsPreprocessor.values.coffee,
                 htmlPreprocessor: prompts.htmlPreprocessor.values.jade
             }).then(function(generator) {
                 gulpAngular = generator;
