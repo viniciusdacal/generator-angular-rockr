@@ -5,16 +5,15 @@
   "description": "Yeoman generator for AngularJS with Gulp",
   "keywords": "yeoman-generator, angular, gulp, restangular, ui-router, bootstrap, angular-material, sass, less, es6, babel, traceur, typescript, coffeescript, jade, haml, webpack, jshint",
   "license": "MIT",
-  "author": "Matthieu Lux & Mehdy Dara",
+  "author": "Vinicius Dacal",
   "contributors": [
-    "Matthieu Lux <matthieu.lux@gmail.com> (https://github.com/Swiip)",
-    "Mehdy Dara <mdara@eleven-labs.com> (http://eleven-labs.com/)"
+    "Vinicius Dacal <viniciusldacal@gmail.com> (https://github.com/viniciusdacal)"
   ],
   "files": [
     "app"
   ],
   "main": "app/index.js",
-  "repository": "Swiip/generator-gulp-angular",
+  "repository": "viniciusdacal/generator-angular-rockr",
   "scripts": {
     "pretest": "./scripts/prepare-test.sh",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- test/node test/template && ./node_modules/.bin/mocha test/inception/test-inception.js -ig protractor",

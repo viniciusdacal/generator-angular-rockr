@@ -1,5 +1,5 @@
 {
-  "name": "generator-gulp-angular",
+  "name": "generator-angular-rockr",
   "version": "0.13.0-dev",
   "dependencies": {
     "bluebird": {
