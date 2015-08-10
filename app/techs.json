@@ -95,12 +95,6 @@
         "description": "Stylus is a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS. Supporting both an indented syntax and regular CSS style.",
         "logo": "stylus.png"
     },
-    "coffee": {
-        "title": "CoffeeScript",
-        "url": "http://coffeescript.org/",
-        "description": "CoffeeScript, \"a little language that compiles into JavaScript\".",
-        "logo": "coffeescript.png"
-    },
     "babel": {
         "title": "ES6 (Babel formerly 6to5)",
         "url": "https://babeljs.io/",

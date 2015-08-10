@@ -28,10 +28,6 @@ gulp.task('scripts', function () {
         .pipe($.jshint.reporter('jshint-stylish'))
 <%   } if (props.jsPreprocessor.key !== 'none') { -%>
         .pipe($.sourcemaps.init())
-<%   } if (props.jsPreprocessor.key === 'coffee') { -%>
-        .pipe($.coffeelint())
-        .pipe($.coffeelint.reporter())
-        .pipe($.coffee()).on('error', conf.errorHandler('CoffeeScript'))
 <%   } if (props.jsPreprocessor.key === 'typescript') { -%>
         .pipe($.tslint())
         .pipe($.tslint.report('prose', { emitError: false }))

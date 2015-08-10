@@ -74,7 +74,7 @@ The root directory generated with default paths configuration for application wi
 │   │   │   │   └──  malarkey.(scss|styl|less|css)
 │   │   │   │
 │   │   │   └──  navbar/
-│   │   │   │   ├──  navbar.directive.(js|ts|coffee)
+│   │   │   │   ├──  navbar.directive.(js|ts)
 │   │   │   │   ├──  navbar.html
 │   │   │   │   └──  navbar.(scss|styl|less|css)
 │   │   │   │
@@ -86,11 +86,11 @@ The root directory generated with default paths configuration for application wi
 │   │   │   ├──  main.controller.spec.js
 │   │   │   └──  main.html
 │   │   │
-│   │   └──  index.config.(js|ts|coffee)
-│   │   └──  index.constants.(js|ts|coffee)
-│   │   └──  index.module.(js|ts|coffee)
-│   │   └──  index.route.(js|ts|coffee)
-│   │   └──  index.run.(js|ts|coffee)
+│   │   └──  index.config.(js|ts)
+│   │   └──  index.constants.(js|ts)
+│   │   └──  index.module.(js|ts)
+│   │   └──  index.route.(js|ts)
+│   │   └──  index.run.(js|ts)
 │   │   └──  index.(scss|styl|less|css)
 |   |
 │   ├──  assets/

@@ -6,7 +6,7 @@ When you have a problem or want to understand why it's working, check this file 
 
 ## `gulpfile.js`
 
-As the gulpfile was becoming enormous, we decided to split it up into several files inside the `gulp` directory. Now, the gulpfile does nothing more than loading all `.js` or `.coffee` files inside the `gulp` directory.
+As the gulpfile was becoming enormous, we decided to split it up into several files inside the `gulp` directory. Now, the gulpfile does nothing more than loading all `.js` files inside the `gulp` directory.
 
 It only defines one task which is the default one which will be launched if you pass no arguments to the gulp command. It will be the `clean` task followed by the `build`.
 

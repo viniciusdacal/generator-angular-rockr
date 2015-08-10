@@ -35,7 +35,7 @@ describe('gulp-angular generator inception tests', function () {
         });
     });
 
-    describe('with [angular 1.3.x, jQuery 2.x.x, Restangular, UI-Router, CSS, Coffee, Jade]', function () {
+    describe('with [angular 1.3.x, jQuery 2.x.x, Restangular, UI-Router, CSS, Jade]', function () {
         before(function() {
             return inception.prepare({}, {
                 angularVersion: prompts.angularVersion.values['1.3'],

@@ -17,7 +17,7 @@ They are inserted at end of `head` by 2 blocks that write 2 files containing all
 They are inserted at end of `body` by 2 blocks that write 2 files containing all the JS.
 * `<!-- build:js(src) scripts/vendor.js -->`: Any bower's vendor scripts present in `bower.json` under property `dependencies` (:warning: not devDependencies) **AND** located in `/bower_components/`
 
-* `<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->`: Yours scripts who match with any files located into `/src/{app,components}/**/*.{js,es6,ts,coffee}`
+* `<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->`: Yours scripts who match with any files located into `/src/{app,components}/**/*.{js,es6,ts}`
 
 
 #### Where to place the third-party files (scripts and stylesheets) who are not installed with bower ?

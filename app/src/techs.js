@@ -29,7 +29,6 @@ module.exports = function(GulpAngularGenerator) {
       return listTechs[value];
     });
 
-    //TODO handle coffee version
     this.technologies = JSON.stringify(techsContent, null, 2)
       .replace(/'/g, '\\\'')
       .replace(/"/g, '\'')
