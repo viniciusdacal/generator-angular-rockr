@@ -1,5 +1,5 @@
 /* global malarkey:false, toastr:false, moment:false */
-(function() {
+(function () {
     'use strict';
 
     angular
