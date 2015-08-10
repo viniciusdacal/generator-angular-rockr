@@ -82,7 +82,7 @@ The root directory generated with default paths configuration for application wi
 │   │   │       └──  webDevTec.service.js
 │   │   │
 │   │   ├──  main/
-│   │   │   ├──  main.controller.(js|ts|coffee)
+│   │   │   ├──  main.controller.(js|ts)
 │   │   │   ├──  main.controller.spec.js
 │   │   │   └──  main.html
 │   │   │
