@@ -26,7 +26,7 @@ module <%- appName %> {
         }
 
         showToastr() {
-            toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+            toastr.info('Fork <a href="https://github.com/viniciusdacal/generator-angular-rockr" target="_blank"><b>generator-gulp-angular</b></a>');
             this.classAnimation = '';
         }
 

@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function githubContributor($log, $http) {
-        var apiHost = 'https://api.github.com/repos/Swiip/generator-gulp-angular',
+        var apiHost = 'https://api.github.com/repos/viniciusdacal/generator-angular-rockr',
             service = {
                 apiHost: apiHost,
                 getContributors: getContributors
